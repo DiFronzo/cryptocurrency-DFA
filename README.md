@@ -33,12 +33,12 @@ UNDER CONSTRUCTION.
 - `Dash/DASH`
 - `Ethereum/ETH`
 - `Dogecoin/DOGE`
+- `Ripple/XRP`
 <!--
 - `Bitcoin Cash/BCH`
 - `Ethereum Classic/ETC`
 - `Litecoin/LTC`
 - `Monero/XMR`
-- `Ripple/XRP`
 - `NEO/NEO`
 - `z.cash/ZEC`
 -->

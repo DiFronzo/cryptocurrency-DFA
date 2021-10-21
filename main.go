@@ -21,3 +21,8 @@ func ValidateDogeAddress(address string) bool {
 func ValidateEthAddress(address string) bool {
 	return dfa.ValidateEthAddress(address) != -1
 }
+
+// ValidateXmrAddress XMR address validator.
+func ValidateXmrAddress(address string) bool {
+	return dfa.ValidateXmrAddress(address) != -1
+}

@@ -106,7 +106,39 @@ func TestValidateDogeAddress(t *testing.T) {
 	}
 }
 
-// TestValidateEthAddress tests the validation of several Eth addresses.
+// TestValidateEthAddress tests the validation of several ETH addresses.
+func TestValidateXmrAddress(t *testing.T) {
+	t.Parallel()
+	tests := []struct {
+		address string
+		result  bool
+	}{
+		// pubkey
+		{"r9ngmmtxEdeEq7vdvGK35sFpfeq8kZsP59", true},
+		{"r4dgY6Mzob3NVq8CFYdEiPnXKboRScsXRu", true},
+		{"r4KapTupp7ba9DA2XgbCvY3f69bQzh62LX", true},
+		{"rNX3fKLT24Sjq1HDPnc28dkJoSkoYCYtTZ", true},
+		{"rhHFcgZ7yqUgMmvC3V7wsMLLnZDEpZNEAc", true},
+		{"rLr478bB5qK3fAb3BQLvUKPeG9mQ7cpbAc", true},
+		// bad addresses
+		{"", false},
+		{"r1111111b11111111111114", false},
+		{"R1111111111M11111111114iLvT", false},
+		{"r9dyoBoF5vDmPCxwSsUZbbY", false},
+		{"AdyoBoF5vDmPCxwSsUZbbYhA5qjAfBTx9", false},
+		{"xpub6DF8uhdarytz3FWdA8TvFSv", false},
+		{"xpub3KGPnzYshia2uSSz8BED2kSpx22bbGCkzq", false},
+	}
+	for _, test := range tests {
+		t.Run(test.address, func(t *testing.T) {
+			if ValidateXmrAddress(test.address) != test.result {
+				t.Fatalf("validate test failed address: %s", test.address)
+			}
+		})
+	}
+}
+
+// TestValidateXmrAddress tests the validation of several XMR addresses.
 func TestValidateEthAddress(t *testing.T) {
 	t.Parallel()
 	tests := []struct {
