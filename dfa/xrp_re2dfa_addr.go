@@ -2,7 +2,7 @@ package dfa
 
 import "unicode/utf8"
 
-func ValidateXmrAddress(s string) (end int) {
+func ValidateXrpAddress(s string) (end int) {
 	end = -1
 	var r rune
 	var rlen int

@@ -107,7 +107,7 @@ func TestValidateDogeAddress(t *testing.T) {
 }
 
 // TestValidateEthAddress tests the validation of several ETH addresses.
-func TestValidateXmrAddress(t *testing.T) {
+func TestValidateXrpAddress(t *testing.T) {
 	t.Parallel()
 	tests := []struct {
 		address string
@@ -131,7 +131,7 @@ func TestValidateXmrAddress(t *testing.T) {
 	}
 	for _, test := range tests {
 		t.Run(test.address, func(t *testing.T) {
-			if ValidateXmrAddress(test.address) != test.result {
+			if ValidateXrpAddress(test.address) != test.result {
 				t.Fatalf("validate test failed address: %s", test.address)
 			}
 		})
